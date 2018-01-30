@@ -10,10 +10,10 @@
 	<nav>
 		<div class="header">
 			<ul>
-				<li><img src="arrow4.png" alt=""><a href="main.html"> Accueil</a></li>
-				<li><img src="arrow4.png" alt=""><a href="Forum.html"> Forum</a></li>
-				<li><img src="arrow4.png" alt=""><a href="divertissement.html"> Divertissement</a></li>
-				<li><img src="arrow4.png" alt=""><a href=""> Déconnexion</a></li>
+				<li><a href="main.html"><img src="arrow4.png" alt=""> Accueil</a></li>
+				<li><a href="Forum.html"><img src="arrow4.png" alt=""> Forum</a></li>
+				<li><a href="divertissement.html"><img src="arrow4.png" alt=""> Divertissement</a></li>
+				<li><a href=""><img src="arrow4.png" alt=""> Déconnexion</a></li>
 			</ul>
 		</div>
 	</nav>
