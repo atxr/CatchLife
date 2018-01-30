@@ -16,9 +16,18 @@ $_SESSION['pass'] = $_POST['pass'];
 
 	<?php include('menu.php'); ?> 
 
-	<div class="titlesection">
-		<h1>Erreur</h1>
-	</div>
+		<div  class="titlesuccessorerror">
+		<?php
+			if (isset($_POST['login']) AND htmlspecialchars($_SESSION['login']) AND $_POST['pass'] == '123456789')
+			{
+				echo '<h1>Bravo!</h1>';
+			}
+			else
+			{
+				echo '<h1>Erreur</h1>';
+			}
+			?>
+		</div>
 
 	<div class="labelconnexion">
 		<?php 
@@ -32,6 +41,8 @@ $_SESSION['pass'] = $_POST['pass'];
 			}
 		?>
 	</div>
+
+
 </body>
 
 

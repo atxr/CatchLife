@@ -21,9 +21,9 @@ $_SESSION['pass'];
 	<div class="labelconnexion">
 		<?php if (isset($_SESSION['login']) AND htmlspecialchars($_SESSION['pass'] == '123456789'))
 			{
-				echo '<p>Vos messages apparaiteront sous le pseudo de "<strong>' . htmlspecialchars($_SESSION['user']) . '</strong>"</p>' ;
-				$bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-				$reponse = $bdd->query('SELECT pseudo, message FROM minichat ORDER BY ID DESC LIMIT 0,10');
+				echo '<p>Vos messages apparaiteront sous le pseudo de "<strong>' . htmlspecialchars($_SESSION['user']) . '</strong>" :</p>' ;
+				$bdd = new PDO('mysql:host=localhost;dbname=logs', 'root', '');
+				$reponse = $bdd->query('SELECT pseudo, message FROM logs ORDER BY ID DESC LIMIT 0,10');
 
 				while ($donnees = $reponse->fetch()) 
 					{
@@ -40,7 +40,10 @@ $_SESSION['pass'];
 	</div>
 
 	<div class="inscription">
-
+			<form action="minichat_post.php" method="POST">
+				<input type="text" name="message">
+				<input type="submit" name="submit">
+			</form>
 	</div>
 
 </body>

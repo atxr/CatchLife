@@ -26,8 +26,8 @@
 		<fieldset>
 			<legend>Inscription :</legend>
 				<form action="" method="">
-					<p>Pseudo :</p><input type="text" name="login" placeholder="Florian06">
-					<p>Password :</p><input type="password" name="pass" placeholder="" >
+					<p>Pseudo :</p><input type="text" name="login" placeholder="ex: CatchLife06">
+					<p>Password :</p><input type="password" name="pass" placeholder="ex: 123456789" >
 					<p>Email</p><input type="email" name="email" required="required" placeholder="ex: ...@gmail.com">
 					<br><br><input type="submit" name="submit" class="button">
 				</form>
