@@ -1,3 +1,8 @@
+<?php
+session_start(); // On démarre la session AVANT toute chose
+$_SESSION['login'];
+$_SESSION['pass'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +18,25 @@
 		<h1>Forum</h1>
 	</div>
 
-	<div class="label">
-		<p>Vos messages apparaissent sur le forum sous le nom de " "</p>
+	<div class="labelconnexion">
+		<?php if (isset($_SESSION['login']) AND htmlspecialchars($_SESSION['pass'] == '123456789'))
+			{
+				echo '<p>Vos messages apparaiteront sous le pseudo de "<strong>' . htmlspecialchars($_SESSION['user']) . '</strong>"</p>' ;
+				$bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+				$reponse = $bdd->query('SELECT pseudo, message FROM minichat ORDER BY ID DESC LIMIT 0,10');
+
+				while ($donnees = $reponse->fetch()) 
+					{
+						echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+					}
+
+						$reponse->closeCursor();
+					}
+				else
+					{
+						echo '<p>Veuillez vous connecter pour voir votre flux d\'actualité !</p>' ;
+					}
+			?>
 	</div>
 
 	<div class="inscription">

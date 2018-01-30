@@ -16,13 +16,17 @@ $_SESSION['pass'] = $_POST['pass'];
 
 	<?php include('menu.php'); ?> 
 
+	<div class="titlesection">
+		<h1>Erreur</h1>
+	</div>
+
 	<div class="labelconnexion">
 		<?php 
 			if (isset($_POST['login']) AND htmlspecialchars($_SESSION['login']) AND $_POST['pass'] == '123456789')
 			{
-				echo '<p>Vous êtes bien connecté en tant que "' . htmlspecialchars($_SESSION['login']) .'" !</br>Vous pouvez vous connecter au forum..</p>';
+				echo '<p>Vous êtes bien connecté en tant que "' . htmlspecialchars($_SESSION['login']) .'" ! Vous pouvez vous connecter au forum..</p>';
 			}
-			elseif ($_POST != '123456789')
+			elseif ($_POST['pass'] != '123456789')
 			{
 				echo '<p>Impossible de se connecter, veuillez vérifier votre utilisateur ou votre mot de passe!</p>';
 			}
