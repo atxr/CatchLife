@@ -16,7 +16,7 @@
 	<div class="formulaires">
 		<fieldset>
 			<legend>Connexion :</legend>
-				<form action="" method="">
+				<form action="connexion.php" method="POST">
 					<p>Pseudo :</p><input type="text" name="login">
 					<p>Password :</p><input type="password" name="pass" required="required">
 					<br><br><input type="submit" name="submit" class="button">
